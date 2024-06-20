@@ -13,19 +13,31 @@
     cursor: pointer;
     background-color: blue;
     &:hover{
-        background-color: lighten($color: blue, $amount: 10%); 
+        background-color: lighten($color: blue, $amount: 20%); 
     }
 }
 
 .triangleTitle{
     font-weight: 600;
     font-size: xx-large;
+    text-transform: uppercase;
+}
+
+.mainTitle{
+    font-weight: 600;
+    color: white;
+    // font-size: xx-large;
+}
+
+.iconContainer{
+    color: white;
+    font-size: xxx-large;
 }
 
 .menuContainer{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .triangleContent{

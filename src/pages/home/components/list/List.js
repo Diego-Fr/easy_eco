@@ -1,15 +1,17 @@
 import ListItem from "./ListItem"
 import styles from './List.module.scss'
 
-const List = () =>{
+const List = props =>{
+    const {listItems} = props
     return (
         <div className={styles.container}>
-            <ListItem></ListItem>
-            <ListItem></ListItem>
-            <ListItem></ListItem>
-            <ListItem></ListItem>
-            <ListItem></ListItem>
-            <ListItem></ListItem>
+            {
+                listItems.map((item,index)=>
+                    <ListItem key={index} listItem={item}></ListItem>
+                )
+            }
+            
+            
         </div>
     )
 }

@@ -2,18 +2,21 @@
     
     position: absolute;
     border-radius:30px;
-    background-color: white;
+    background-color: white !important;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s all;
+    // font-size: small;
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    // border: 1px solid white;
 }
 
 .triangleClickable{
     cursor: pointer;
-    background-color: blue;
+    // background-color: red;
     &:hover{
-        background-color: lighten($color: blue, $amount: 20%); 
+        // background-color: lighten($color: blue, $amount: 20%); 
     }
 }
 
@@ -32,6 +35,7 @@
 .iconContainer{
     color: white;
     font-size: xxx-large;
+    margin-top: 5px;
 }
 
 .menuContainer{
@@ -50,29 +54,57 @@
     width: 100% !important;
     height: 100% !important;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) !important;
+    top: 0%!important;
+    right: 0% !important;
     // background-color: red !important;
 }
 
 .triangleLeft{
-    width: 50%;
-    height: 100%;
+    width: 49%;
+    height: 98%;
+    top: 1%;
     clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+    &.triangleClickable{
+        background: rgb(255,109,4);
+        background: linear-gradient(0deg, rgba(255,109,4,1) 0%, rgba(254,99,38,1) 45%, rgba(249,7,7,1) 100%);
+            // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    // background-color: red;
 }
 .triangleRight{
-    width: 50%;
-    height: 100%;
+    width: 49%;
+    height: 98%;
     clip-path: polygon(0% 50%, 100% 100%, 100% 0%);
     right: 0px;
+    top: 1%;
+    &.triangleClickable{
+        background: rgb(14,119,56);
+        background: linear-gradient(90deg, rgba(14,119,56,1) 0%, rgba(10,201,103,1) 49%, rgba(4,231,137,1) 100%);
+        // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
 }
 .triangleTop{
-    width: 100%;
-    height: 50%;
+    width: 98%;
+    height: 49%;
     clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-    right: 0px;
+    right: 1%;
+    &.triangleClickable{
+        background: rgb(4,95,149);
+        background: linear-gradient(4deg, rgba(4,95,149,1) 0%, rgba(14,133,228,1) 45%, rgba(0,168,255,1) 100%);
+        // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    
 }
 .triangleBottom{
-    width: 100%;
-    height: 50%;
+    width: 98%;
+    height: 49%;
     clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+    right: 1%;
     bottom: 0px;
+    &.triangleClickable{
+        background: rgb(255,109,4);
+        background: linear-gradient(0deg, rgba(255,109,4,1) 0%, rgba(254,99,38,1) 45%, rgba(249,7,7,1) 100%);
+        // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
+    }
+    
 }

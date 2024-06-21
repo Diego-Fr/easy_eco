@@ -4,13 +4,11 @@ import List from '../list/List'
 import CloseButton from '../list/CloseButton'
 
 const TriangleItem = props =>{
-    const {listItems} = props
+    const {listItems,listName} = props
     const [open, setOpen] = useState(false)
 
     const onClick = () =>{
-        if(!open){
-            setOpen(true)
-        }
+        props.clickHandler({listName:listName, listTitle:props.title})
     }
 
     const closeMenu = () =>{
@@ -30,7 +28,11 @@ const TriangleItem = props =>{
                 </div>
                 :
                 <div>
-                    <div className={styles.mainTitle}>{props.title}</div>
+                    <div className={styles.mainTitle}>{
+                        props.title.split(' ').map((text,index)=>
+                            <div key={index}>{text}</div>
+                        )
+                    }</div>
                     <div className={styles.iconContainer}>{props.icon}</div>
                 </div>
             }

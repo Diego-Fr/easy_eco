@@ -1,0 +1,78 @@
+@import '../../../../colors.scss';
+
+
+.container{
+    width: 300px;
+    height: 600px;
+    background: rgb(41,170,212);
+    background: linear-gradient(355deg, rgba(41,170,212,1) 0%, rgba(102,225,251,1) 100%);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    cursor: pointer;
+    position: relative;
+
+    &.with-border{
+        border: 2px solid white;
+    }
+}
+
+
+.wrapper{
+    position: relative;
+        // padding: 5%;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    transition: 0.3s all;
+    transform: scale(0.9);
+    opacity: 0;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.itemsWrapper{
+    position: relative;
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    .item{
+        color: white;
+        background-color: $dark;
+        width: 95%;
+        padding: 10px 0px;
+        transition: 0.2s all;
+        &:hover{
+            background-color: darken($color: $dark, $amount: 5%);
+        }
+    }
+}
+.showWrapper{
+    display: flex;
+    animation-name: showMainWrapper;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.cardTitle{
+    font-size: x-large;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $text-dark-color;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.cardIcon{
+    font-size: xxx-large;
+    color: $text-dark-color;
+}
+
+@keyframes showMainWrapper {
+    0%   {display: flex;opacity: 0}
+    1%  {display: flex;opacity: 0;transform: scale(0.8);}
+    100% {display: flex;opacity: 1;transform: scale(1);}
+  }

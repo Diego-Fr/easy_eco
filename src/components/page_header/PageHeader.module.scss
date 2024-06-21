@@ -1,0 +1,25 @@
+.title{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: x-large;
+}
+
+.pageHeaderContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #c7c7c7;
+    // background-color: red;
+}
+
+.arrowContainer{
+    font-size: x-large;
+    color: #999999;
+    cursor: pointer;
+    &:hover{
+        color: darken($color: #999999, $amount: 20);
+    }
+}

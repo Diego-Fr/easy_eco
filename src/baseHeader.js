@@ -1,5 +1,4 @@
 const baseHeader = () =>{
-    console.log('tentando');
     const topoGlobal = document.querySelector('#topbarGlobal');
     const BtnDigital = document.querySelectorAll('.govsp-link.digital');
 

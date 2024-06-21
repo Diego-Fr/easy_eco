@@ -65,8 +65,8 @@ const Home2 = () =>{
                             </div>
                             <div className={`${styles.cardsWrapper}`}>
                                 {
-                                    menuItems.map(item=>
-                                        <Card itemClickHandler={itemClickHandler} item={item}></Card>
+                                    menuItems.map((item,index)=>
+                                        <Card key={index} itemClickHandler={itemClickHandler} item={item}></Card>
                                     )
                                 }
                             </div>

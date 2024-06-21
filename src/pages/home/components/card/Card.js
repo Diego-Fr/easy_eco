@@ -38,8 +38,8 @@ const Card = props =>{
             </div>
             <div className={`${styles.itemsWrapper} ${showItems ? styles.showWrapper : ''}`}>
                 {
-                    item.items && item.items.map(x=>(
-                        <div onClick={_=>itemClickHandler(x)} className={styles.item}>{x.title}</div>
+                    item.items && item.items.map((x,index)=>(
+                        <div key={index} onClick={_=>itemClickHandler(x)} className={styles.item}>{x.title}</div>
                     ))
                 }
             </div>

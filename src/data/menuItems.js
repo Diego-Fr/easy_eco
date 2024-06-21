@@ -1,37 +1,45 @@
 
-import { Fa500Px } from "react-icons/fa6";
+import { FaHouseCrack,FaDroplet } from "react-icons/fa6";
+import { WiDaySleetStorm } from "react-icons/wi";
+import { FaLayerGroup } from "react-icons/fa";
 export default [
     {
         title:'Disponibilidade Hídrica',
-        url: 'https://www.google.com',
-        route: '/disp_hidrica',
-        icon: <Fa500Px />,
+        className: 'disp-hidri',
+        icon: <FaDroplet />,
         items:[
-            {title: 'Indicador de Falkenmark', url: '', route: ''},
-            {title: 'Nível de Estresse Hídrico', url: '', route: ''}
+            {title: 'Indicador de Falkenmark', url: 'https://app.powerbi.com/view?r=eyJrIjoiNjAxN2I2ZTktOTA1MC00MzQwLTk2YjYtYTJlZDc2YjIxZWRhIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'},
+            {title: 'Nível de Estresse Hídrico', url: 'https://app.powerbi.com/view?r=eyJrIjoiOWEyYzliZjItNDZkMS00ODk4LTgwNjItNWQzMDlmMjk2NDZmIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''}
         ]
     },
     {
         title:'Condições Climáticas',
-        url: 'https://www.google.com',
-        route: '/disp_hidrica',
-        icon: <Fa500Px />
+        className: 'cond-clim',
+        items:[
+            {title: 'Precipitação Mensal', url: 'https://app.powerbi.com/view?r=eyJrIjoiNjAxN2I2ZTktOTA1MC00MzQwLTk2YjYtYTJlZDc2YjIxZWRhIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'},
+            {title: 'Índice de Precipitação Padronizado', url: 'https://app.powerbi.com/view?r=eyJrIjoiOWEyYzliZjItNDZkMS00ODk4LTgwNjItNWQzMDlmMjk2NDZmIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''},
+            {title: 'Magnitude da Seca', url: 'https://app.powerbi.com/view?r=eyJrIjoiNjAxN2I2ZTktOTA1MC00MzQwLTk2YjYtYTJlZDc2YjIxZWRhIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'},
+            {title: 'Monitor de Secas', url: 'https://app.powerbi.com/view?r=eyJrIjoiOWEyYzliZjItNDZkMS00ODk4LTgwNjItNWQzMDlmMjk2NDZmIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''}
+        ],
+        icon: <WiDaySleetStorm />
     },
     {
         title:'Vulnerabilidade',
-        url: 'https://www.google.com',
-        route: '/disp_hidrica',
-        icon: <Fa500Px />
+        className: 'vulnera',
+        items:[
+            {title: 'Chuva Agora', url: 'https://cth.daee.sp.gov.br/sibh/chuva_agora', route: '/disp_hidrica'},
+            {title: 'Pontos Críticos de Alagamento', url: 'https://app.powerbi.com/view?r=eyJrIjoiOWEyYzliZjItNDZkMS00ODk4LTgwNjItNWQzMDlmMjk2NDZmIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''},
+            {title: 'Pontos Críticos de Erosão', url: 'https://app.powerbi.com/view?r=eyJrIjoiNjAxN2I2ZTktOTA1MC00MzQwLTk2YjYtYTJlZDc2YjIxZWRhIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'}
+        ],
+        icon: <FaHouseCrack />
     },
     {
         title:'Infraestrutura Resiliente',
-        url: 'https://www.google.com',
-        route: '/disp_hidrica',
-        icon: <Fa500Px />
+        className: 'infra-resi',
+        items:[
+            {title: 'Índice de Segurança Hídrica Urbano', url: 'https://app.powerbi.com/view?r=eyJrIjoiNjAxN2I2ZTktOTA1MC00MzQwLTk2YjYtYTJlZDc2YjIxZWRhIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'},
+            {title: 'Mananciais por Município', url: 'https://app.powerbi.com/view?r=eyJrIjoiOWEyYzliZjItNDZkMS00ODk4LTgwNjItNWQzMDlmMjk2NDZmIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''}
+        ],
+        icon: <FaLayerGroup />
     },
-        // {title:'Nível de Estresse Hídrico'}
-    // ],
-    // condClima:[{title:'Precipitação Mensal'},{title:'Índice de Precipitação Padronizado'},{title:'Magnitude da Seca'},{title:'Monitor de Secas'}],
-    // vulnera:[{title:'Chuva Agora'},{title:'Pontos Críticos de Alagamento'},{title:'Pontos Críticos de Erosão'}],
-    // infraRes:[{title:'Índice de Segurança Hídrica Urbano'}, {title:'Mananciais por Município'}],
 ]

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styles from './Card.module.scss'
 
 const Card = props =>{
-    const [showItems, setShowItems] = useState(true)
-    const {title,item} = props
+    const [showItems, setShowItems] = useState(false)
+    const {item} = props
     
     const mouseOver = () =>{
         setShowItems(true)

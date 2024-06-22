@@ -1,36 +1,44 @@
 import styles from './Home.module.scss'
-import TriangleItem from './components/triangle_item/TriangleItem'
-import { WiDaySleetStorm } from 'react-icons/wi';
-import { GiWaterRecycling } from 'react-icons/gi';
+
 import menuItems from '../../data/menuItems';
 import { useEffect, useRef, useState } from 'react';
-import MenuList from '../menu_list/MenuList';
-import CloseButton from './components/list/CloseButton';
-import PageHeader from '../../components/page_header/PageHeader';
+import MenuList from './menu_list/MenuList';
+import Card from './components/card/Card';
+import spImage from '../../assets/SP-GOV-BR-vertical-RGB.png'
+import daeeLogo from '../../assets/daee70.png'
+import Modal from '../../components/modal/Modal';
+import { useMediaQuery } from 'react-responsive';
+import MobileCard from './components/card/MobileCard';
 
 
 
 const Home = () =>{
 
-    const containerRef = useRef(null)
+    const sectionRef = useRef(null)
     const [showList, setShowList] = useState()
-    const [listName, setListName] = useState('dispHidro')
-    const [listTitle, setListTitle] = useState('')
-
+    const [selectedItem, setSelectedItem] = useState(null)
+    const modalRef = useRef()
+    const isMobile = useMediaQuery({ maxWidth: 480 });
+    
     const clickHandler = item =>{
-        setListName(item.listName)
-        setListTitle(item.listTitle)
+        setSelectedItem(item)
         setShowList(true)
+    }
+
+    const itemClickHandler = item =>{
+        modalRef.current.openMethod(item)
     }
     const closeMenu = () =>{
         setShowList(false)
     }
 
     useEffect(_=>{
+        let header = document.getElementById('topbarGlobal')
+        header.classList.add(styles.header)
         setTimeout(_=>{
-            if(containerRef.current){
-                let headerHeight = document.getElementById('topbarGlobal').offsetHeight
-                containerRef.current.style.height = window.innerWidth + 'px'
+            if(sectionRef.current){
+                let headerHeight = header.offsetHeight
+                sectionRef.current.style.height = window.innerHeight - headerHeight + 'px'
             }
             
         },100)
@@ -39,23 +47,36 @@ const Home = () =>{
 
     return (
         <>
-            {!showList ?
-                <>
-                    <PageHeader showIcon={false} title={'Indicadores Segurança Hídrica'}></PageHeader>
-                    <div ref={containerRef} className={styles.container}>
-                        <TriangleItem clickHandler={clickHandler} id="triangleTop" listName={'dispHidro'} title={'Disponibilidade Hídrica'} icon={<GiWaterRecycling />} listItems={menuItems.dispHidro}></TriangleItem>
-                        <TriangleItem clickHandler={clickHandler} id="triangleBottom" listName={'condClima'} title={'Condições Climáticas'} icon={<WiDaySleetStorm />} listItems={menuItems.condClima}></TriangleItem>
-                        <TriangleItem clickHandler={clickHandler} id="triangleLeft" listName={'vulnera'} title={'Vulnerabilidade'} icon={<WiDaySleetStorm />} listItems={menuItems.vulnera}></TriangleItem>
-                        <TriangleItem clickHandler={clickHandler} id="triangleRight" listName={'infraRes'} title={'Infraestrutura Resiliente'} icon={<WiDaySleetStorm />} listItems={menuItems.infraRes}></TriangleItem>
-                    </div>
-                </>
-                :
-                <>
-                    <MenuList listName={listName} listTitle={listTitle}/>
-                    <CloseButton onPress={closeMenu} />
-                </>
+            <section ref={sectionRef} className={styles.sectionContainer}>
+                <Modal ref={modalRef}></Modal>
+                    {!showList ?
+                        <>       
+                                
+                            <div className={`${!isMobile && styles.container}`}>
+                                <div className={styles.pageTitleContainer}>
+                                    Indicadores Segurança Hídrica
+                                </div>
+                                <div className={`${styles.cardsWrapper} ${isMobile && styles.vertical}`}>
+                                    {
+                                        menuItems.map((item,index)=>{
+                                            return !isMobile ? <Card key={index} itemClickHandler={itemClickHandler} item={item}></Card> : <MobileCard key={index} itemClickHandler={clickHandler} item={item}/>
+                                        })
+                                    }
+                                </div>
+                                <div className={styles.entitiesContainer}>
+                                    <img src={spImage} width={100}></img>
+                                    <img src={daeeLogo} width={100}></img>
+                                </div>
+                            </div>
+                        </>
+                        :
+                        <>
+                            <MenuList onItemPress={itemClickHandler} onClosePress={closeMenu} item={selectedItem}/>
+                        </>
+                        
+                    }
                 
-            }
+            </section>
         </>
     )
 }

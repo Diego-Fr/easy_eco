@@ -2,13 +2,17 @@ import ListItem from "./ListItem"
 import styles from './List.module.scss'
 
 const List = props =>{
-    const {listItems} = props
+    const {item} = props
     
+    const onPress = item =>{
+        props.onPress(item)
+    }
+
     return (
         <div className={styles.container}>
             {
-                listItems.map((item,index)=>
-                    <ListItem key={index} listItem={item}></ListItem>
+                item.items.map((item,index)=>
+                    <ListItem key={index} listItem={item} onPress={onPress}></ListItem>
                 )
             }
             

@@ -1,0 +1,37 @@
+.container{
+    width: 95%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    color: white;
+    background: rgb(58,195,209);
+    background: linear-gradient(355deg, rgba(58,195,209,1) 56%, rgba(54,110,136,1) 100%);
+    border-bottom: 1px solid white;
+    
+    &.infra-resi{
+        background: rgb(241,50,211);
+        background: linear-gradient(355deg, rgba(241,50,211,1) 56%, rgba(136,54,125,1) 100%);
+    }
+
+    &.vulnera{
+        background: rgb(241,69,50);
+        background: linear-gradient(355deg, rgba(241,69,50,1) 56%, rgba(136,54,54,1) 100%);
+    }
+
+    &.cond-clim{
+        background: rgb(58,209,63);
+        background: linear-gradient(355deg, rgba(58,209,63,1) 56%, rgba(60,136,54,1) 100%);
+    }
+
+}
+
+.icon{
+    font-size: x-large;
+    width: 25%;
+}
+
+.title{
+    text-transform: uppercase;
+}

@@ -7,7 +7,8 @@ const ListItem = props =>{
     const [navigate, setNavigate] = useState(false);
     
     const onPress = () =>{
-        setNavigate(true)
+        // setNavigate(true)
+        props.onPress(listItem)
     }
 
     if (navigate) {

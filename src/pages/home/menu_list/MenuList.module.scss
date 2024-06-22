@@ -1,0 +1,24 @@
+@import '../../../colors.scss';
+
+
+.listTitle{
+    font-weight: 600;
+    font-size: x-large;
+    text-transform: uppercase;
+    color: $dark;
+}
+
+.container{
+    padding: 10px;
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}

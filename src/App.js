@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import Home from './pages/home/Home';
-import Home2 from './pages/home/Home2';
 import baseHeader from './baseHeader'; //js do header
 
 
@@ -15,7 +14,7 @@ import Header from './components/header/Header';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home2/>
+    element: <Home/>
   },
   {
     path: "/disp_hidrica",

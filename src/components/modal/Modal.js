@@ -1,4 +1,5 @@
 import { useState,useImperativeHandle,forwardRef, useRef } from 'react'
+import { FaTimes } from "react-icons/fa";
 import styles from './Modal.module.scss'
 
 const Modal = forwardRef((props, ref)=>{
@@ -29,9 +30,14 @@ const Modal = forwardRef((props, ref)=>{
     return (
         <div ref={modalContainerRef} onClick={e=>outsideClickHandler(e)} className={`${styles.container} ${show && styles.show }`}>
             <div className={`${styles.modal} ${show && styles.show }`}>
+                
+                <div className={styles.modalHeader}>
+                    
+                </div>
                 <div className={styles.content}>
-                    <div className={styles.modalHeader}>
+                    <div className={styles.modalTitleContainer}>
                         <div className={styles.modalTitle}>{title}</div>
+                        <FaTimes onClick={_=>setShow(false)} className={styles.closeButton} />
                     </div>
                     <iframe className={styles.iframeContainer} src={url}></iframe>
                 </div>

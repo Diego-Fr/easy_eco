@@ -44,7 +44,7 @@ let menuItems =  [
         className: 'infra-resi',
         items:[
             {title: 'Índice de Segurança Hídrica Urbano', url: 'https://app.powerbi.com/view?r=eyJrIjoiMmYwMjY4YzAtNTg4Ny00NTE2LTlmNTYtZmQyMTRkNmM0NDllIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: '/disp_hidrica'},
-            {title: 'Mananciais por Município', url: '', route: ''}
+            {title: 'Mananciais por Município', url: 'https://app.powerbi.com/view?r=eyJrIjoiNTI3NzQwMGUtODkyOS00N2Y1LWIxMWYtNWE0M2I5ZDMyOTFkIiwidCI6Ijc1MjEyZDQyLTVmNjEtNGYyYS04ZDRlLWU3YmM4ZDFmZmIzYiJ9', route: ''}
         ],
         icon: <FaLayerGroup />
     },

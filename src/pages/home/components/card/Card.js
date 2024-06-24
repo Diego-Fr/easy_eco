@@ -31,8 +31,8 @@ const Card = props =>{
                 </div>
                 {!showItems ? 
                     <div className={styles.textWrapper}>
-                        <div className=''>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum accumsan eros quis varius. Duis faucibus dapibus mi et convallis. Etiam vehicula egestas velit sed dignissim. 
+                        <div className={styles.description}>
+                            {item.desc || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum accumsan eros quis varius. Duis faucibus dapibus mi et convallis. Etiam vehicula egestas velit sed dignissim. '}
                         </div>
                         <div className={styles.cardButtonContainer}>
                             <div className={styles.cardButton}>{'Ver Mais'}</div>

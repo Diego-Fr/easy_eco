@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import DispHidri from './pages/disp_hidri/DispHidri';
 import Header from './components/header/Header';
+import Map from './pages/map/Map';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/disp_hidrica",
     element: <DispHidri/>
+  },
+  {
+    path: "/mapa",
+    element: <Map/>
   }
 ]);
 

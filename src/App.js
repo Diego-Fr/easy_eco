@@ -15,7 +15,7 @@ import Map from './pages/map/Map';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Map/>
   },
   {
     path: "/disp_hidrica",
